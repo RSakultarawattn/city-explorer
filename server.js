@@ -1,34 +1,8 @@
-const express = require('express');
-const cors = require('cors');
+require('dotenv').config();
 
-const app = express();
+
+const app = require('./lib/app.js');
 const PORT = process.env.PORT || 3000;
-
-
-
-
-app.use(cors());
-
-/*
-{
-  "formatted_query": "Seattle, WA, USA",
-  "latitude": "47.606210",
-  "longitude": "-122.332071"
-}
-*/
-
-
-
-// app.get('/location', async (req, res) => {
-//   try {
-//     const mungedData = geoMunge(geoData);
-//     res.json(mungedData);
-//   } catch (e) {
-//     res.json({ error: e.message })
-//   }
-// });
-
-
 
 
 
