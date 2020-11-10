@@ -9,9 +9,10 @@ function geoMunge(geoData) {
             longitude: firstItem.lon
         };
     } catch (e) {
-        return {};
+        res.status(500).json({ error: e.message });
+
     }
-}
+};
 
 module.exports = {
     geoMunge

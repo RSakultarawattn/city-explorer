@@ -1,11 +1,10 @@
 const express = require('express');
 const cors = require('cors');
-const { geoData } = require('./utils.js');
-const request = require('superagent');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
-const { geoMunge } = require('./utils.js');
-const data = require('./geo.json');
+
+
 
 
 app.use(cors());
@@ -18,23 +17,16 @@ app.use(cors());
 }
 */
 
-app.get('/', async (req, res) => {
-  try {
 
-    res.json(geoData);
-  } catch (e) {
-    res.json({ error: e.message });
-  }
-});
 
-app.get('/location', async (req, res) => {
-  try {
-    const mungedData = geoMunge(geoData);
-    res.json(mungedData);
-  } catch (e) {
-    res.json({ error: e.message })
-  }
-});
+// app.get('/location', async (req, res) => {
+//   try {
+//     const mungedData = geoMunge(geoData);
+//     res.json(mungedData);
+//   } catch (e) {
+//     res.json({ error: e.message })
+//   }
+// });
 
 
 
